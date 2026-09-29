@@ -26,8 +26,8 @@ const typeColors = {
 
 class Type {
   constructor(data) {
-    this.name = typeof data === "object" ? data.name : data;
-    this.image = typeof data === "object" ? data.image : "";
+    this.name = data.name;
+    this.image = data.image;
     this.color = this.getColorHexa();
   }
 
@@ -38,16 +38,16 @@ class Type {
 
 class Pokemon {
   constructor(data) {
-    this.id = data.pokedex_id ?? data.pokedexId ?? data.id;
-    this.image = data.sprites?.regular ?? data.image;
-    this.name = typeof data.name === "object" ? data.name.fr : data.name;
-    this.arrTypes = (data.types || data.apiTypes || []).map(type => new Type(type));
-    this.apiTypes = this.arrTypes;
-    this.hp = data.stats?.hp ?? data.stats?.HP ?? "";
-    this.attack = data.stats?.atk ?? data.stats?.attack;
-    this.defense = data.stats?.def ?? data.stats?.defense;
-    this.special_attack = data.stats?.spe_atk ?? data.stats?.special_attack;
-    this.speed = data.stats?.vit ?? data.stats?.speed;
+    this.id = data.pokedex_id;
+    this.image = data.sprites.regular;
+    this.name = data.name.fr;
+    this.apiTypes = data.types;
+    this.arrTypes = this.apiTypes.map(type => new Type(type));
+    this.hp = data.stats.hp;
+    this.attack = data.stats.atk;
+    this.defense = data.stats.def;
+    this.special_attack = data.stats.spe_atk;
+    this.speed = data.stats.vit;
   }
 
   displayCard() {
@@ -114,26 +114,12 @@ function displayPokemons() {
 
   if (triSelect.value === "nom") {
     filteredData.sort((a, b) => a.name.localeCompare(b.name));
-  } else if (triSelect.value === "nom_desc") {
-    filteredData.sort((a, b) => b.name.localeCompare(a.name));
   } else if (triSelect.value === "pv") {
     filteredData.sort((a, b) => b.hp - a.hp);
-  } else if (triSelect.value === "pv_asc") {
-    filteredData.sort((a, b) => a.hp - b.hp);
   } else if (triSelect.value === "attaque") {
     filteredData.sort((a, b) => b.attack - a.attack);
-  } else if (triSelect.value === "attaque_asc") {
-    filteredData.sort((a, b) => a.attack - b.attack);
-  } else if (triSelect.value === "defense") {
-    filteredData.sort((a, b) => b.defense - a.defense);
-  } else if (triSelect.value === "spe_atk") {
-    filteredData.sort((a, b) => b.special_attack - a.special_attack);
-  } else if (triSelect.value === "vitesse") {
-    filteredData.sort((a, b) => b.speed - a.speed);
   } else if (triSelect.value === "type") {
     filteredData.sort((a, b) => a.arrTypes[0].name.localeCompare(b.arrTypes[0].name));
-  } else {
-    filteredData.sort((a, b) => a.id - b.id);
   }
 
   filteredData.forEach(pokemon => {
