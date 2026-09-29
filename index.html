@@ -10,79 +10,58 @@
     <script src="./js/script.js" defer type="module"></script>
   </head>
   <body>
+    <header>
+      <div class="filters">
+        <label for="generation">Choisir une génération :</label>
+        <select id="generation" name="generation">
+          <option value="1">Génération 1</option>
+          <option value="2">Génération 2</option>
+          <option value="3">Génération 3</option>
+          <option value="4">Génération 4</option>
+          <option value="5">Génération 5</option>
+          <option value="6">Génération 6</option>
+          <option value="7">Génération 7</option>
+          <option value="8">Génération 8</option>
+        </select>
+
+        <label for="tri">Trier par :</label>
+        <select id="tri" name="tri">
+          <option value="id">Numéro Pokédex</option>
+          <option value="nom">Nom</option>
+          <option value="nom_desc">Nom (Z à A)</option>
+          <option value="pv">Points de vie</option>
+          <option value="pv_asc">Points de vie (croissant)</option>
+          <option value="attaque">Attaque</option>
+          <option value="attaque_asc">Attaque (croissant)</option>
+          <option value="defense">Défense</option>
+          <option value="spe_atk">Attaque spéciale</option>
+          <option value="vitesse">Vitesse</option>
+          <option value="type">Type</option>
+        </select>
+      </div>
+
+      <div id="types">
+        <button type="button" class="btn-type" data-type="Plante">Plante</button>
+        <button type="button" class="btn-type" data-type="Feu">Feu</button>
+        <button type="button" class="btn-type" data-type="Eau">Eau</button>
+        <button type="button" class="btn-type" data-type="Insecte">Insecte</button>
+        <button type="button" class="btn-type" data-type="Normal">Normal</button>
+        <button type="button" class="btn-type" data-type="Poison">Poison</button>
+        <button type="button" class="btn-type" data-type="Électrik">Électrik</button>
+        <button type="button" class="btn-type" data-type="Sol">Sol</button>
+        <button type="button" class="btn-type" data-type="Vol">Vol</button>
+        <button type="button" class="btn-type" data-type="Combat">Combat</button>
+        <button type="button" class="btn-type" data-type="Psy">Psy</button>
+        <button type="button" class="btn-type" data-type="Roche">Roche</button>
+        <button type="button" class="btn-type" data-type="Spectre">Spectre</button>
+        <button type="button" class="btn-type" data-type="Glace">Glace</button>
+        <button type="button" class="btn-type" data-type="Dragon">Dragon</button>
+        <button type="button" class="btn-type" data-type="Ténèbres">Ténèbres</button>
+        <button type="button" class="btn-type" data-type="Acier">Acier</button>
+        <button type="button" class="btn-type" data-type="Fée">Fée</button>
+      </div>
+    </header>
     <main>
-      <article>
-        <figure>
-          <picture>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Image Bulbizarre" />
-          </picture>
-          <figcaption>
-            <span class="types">Plante</span>
-            <h2>Bulbizarre</h2>
-            <ol>
-              <li>Points de vie : 39</li>
-              <li>Attaque : 52</li>
-              <li>Défense : 43</li>
-              <li>Attaque spécial : 60</li>
-              <li>Vitesse : 65</li>
-            </ol>
-          </figcaption>
-        </figure>
-      </article>
-      <article>
-        <figure>
-          <picture>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Image Bulbizarre" />
-          </picture>
-          <figcaption>
-            <span class="types">Plante</span>
-            <h2>Bulbizarre</h2>
-            <ol>
-              <li>Points de vie : 39</li>
-              <li>Attaque : 52</li>
-              <li>Défense : 43</li>
-              <li>Attaque spécial : 60</li>
-              <li>Vitesse : 65</li>
-            </ol>
-          </figcaption>
-        </figure>
-      </article>
-      <article>
-        <figure>
-          <picture>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Image Bulbizarre" />
-          </picture>
-          <figcaption>
-            <span class="types">Plante</span>
-            <h2>Bulbizarre</h2>
-            <ol>
-              <li>Points de vie : 39</li>
-              <li>Attaque : 52</li>
-              <li>Défense : 43</li>
-              <li>Attaque spécial : 60</li>
-              <li>Vitesse : 65</li>
-            </ol>
-          </figcaption>
-        </figure>
-      </article>
-      <article>
-        <figure>
-          <picture>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Image Bulbizarre" />
-          </picture>
-          <figcaption>
-            <span class="types">Plante</span>
-            <h2>Bulbizarre</h2>
-            <ol>
-              <li>Points de vie : 39</li>
-              <li>Attaque : 52</li>
-              <li>Défense : 43</li>
-              <li>Attaque spécial : 60</li>
-              <li>Vitesse : 65</li>
-            </ol>
-          </figcaption>
-        </figure>
-      </article>
     </main>
   </body>
 </html>
